@@ -1,0 +1,10 @@
+# 空フォルダを保持
+!.gitignore
+
+
+# ショートカットリンクを除外
+.ssh.lnk
+unserori@raspi_atba.lnk
+
+# えんヴを除外
+.env
