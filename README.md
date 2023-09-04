@@ -61,6 +61,27 @@ chmod 700 ~/.ssh
 $ rm ~/.ssh/id_ed25519_ssh_raspi.pub
 ```
 
+### pythonプロジェクトを作る
+入ってるとは思うがpythonを入れる。
+
+```
+# pythonプロジェクツフォルダを作る
+$ mkdir python_projects  # 任意の場所。適宜書き換え。
+$ cd python_projects
+# リポジトリを配置
+git clone https://github.com/unSerori/admirable_to_be_alive_server.git  # 適宜
+# pythonプロジェクト内に移動
+$ cd admirable_to_be_alive_server  # 適宜正しい場所に移動
+# virtualenvをインストール
+$ pip install virtualenv
+# 仮想環境を作る
+$ virtualenv runtime
+# 仮想環境に入る。以下のコマンドはpythonプロジェクト内で。
+$ source runtime/bin/activate
+# 必要なライブラリをインストール
+$ pip install -r requirements.txt
+```
+
 ### WinSCP
 開発はwindowsPCで行った。その際WinSCPを利用した。以下を設定した。
 1. 環境設定 -> パネル -> 隠しファイルを表示
