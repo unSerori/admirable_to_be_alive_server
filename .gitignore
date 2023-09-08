@@ -4,7 +4,7 @@
 
 # ショートカットリンクを除外
 .ssh.lnk
-unserori@raspi_atba.lnk
+*@*.lnk
 
 # えんヴを除外
 .env
