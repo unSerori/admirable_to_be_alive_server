@@ -10,3 +10,5 @@ unserori@raspi_atba.lnk
 .env
 # runtimeを除外
 runtime/*
+# ユーザーデータを保存するフォルダ
+./users_data/*
