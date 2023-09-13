@@ -10,7 +10,6 @@ googleカレンダー(home読み込み時)
 import os
 from flask import Flask, jsonify, request, render_template
 from flask_cors import cross_origin
-from flask_cors import CORS
 from dotenv import load_dotenv  # dotenvをインポート
 load_dotenv()  # .envファイルの内容を読み込見込む
 CLIENT_ID = os.environ.get("CLIENT_ID")  # .envからクライアントIDを持ってくる。
@@ -23,7 +22,7 @@ app = Flask(__name__)  # インスタンス生成、これによりアクセス�
 
 # フォルダの初期化
 users_data_dir = os.path.abspath("./users_data")
-if not os.path.isdir():  # フォルダがなければ作る
+if not os.path.isdir(users_data_dir):  # フォルダがなければ作る
     os.mkdir(users_data_dir)
 
 
@@ -40,7 +39,7 @@ if not os.path.isdir():  # フォルダがなければ作る
 def post_login():
     req = request.get_json(force=True)
     # ここにしょりかきたい++++++++++++++++++++++++++++++++++++++++++++++++
-    # google login 関連の処理に飛ばす...ってコト？！
+    # ログイン済みか判定して初回ならgoogle login 関連の処理に飛ばす...ってコト？！
 
 
 # get_userInfo
@@ -82,6 +81,7 @@ def post_userInfo():
 def get_google_cal():
     req = request.get_json(force=True)
     # ここにしょりかきたい++++++++++++++++++++++++++++++++++++++++++++++++
+    return "calend"
 
 
 
