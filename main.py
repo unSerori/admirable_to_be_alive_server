@@ -9,7 +9,9 @@ googleカレンダー(home読み込み時)
 '''
 import os
 from flask import Flask, jsonify, request, render_template
-from flask_cors import cross_origin
+from flask_cors import cross_origin  # http通信のCORS制限
+# from aqlalchemy import create_engine
+# engine = create_engine("sqlite://:memory:")
 from dotenv import load_dotenv  # dotenvをインポート
 load_dotenv()  # .envファイルの内容を読み込見込む
 CLIENT_ID = os.environ.get("CLIENT_ID")  # .envからクライアントIDを持ってくる。
@@ -20,7 +22,7 @@ CLIENT_SECRET = os.environ.get("CLIENT_SECRET")  # .envからクライアント�
 
 app = Flask(__name__)  # インスタンス生成、これによりアクセスされたURIによって処理を変更する。
 
-# フォルダの初期化
+# ディレクトリかんれんの初期化
 users_data_dir = os.path.abspath("./users_data")
 if not os.path.isdir(users_data_dir):  # フォルダがなければ作る
     os.mkdir(users_data_dir)
